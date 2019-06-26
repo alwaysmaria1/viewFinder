@@ -13,7 +13,7 @@
         <!--viewfinder-->
         <scene sceneID="Zjh-31-JWT">
             <objects>
-                <tableViewController id="4eb-K3-NL8" sceneMemberID="viewController">
+                <tableViewController id="4eb-K3-NL8" customClass="SavePhotoTableViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0K6-PY-4iS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,11 +63,17 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="captionText:" destination="XPr-L4-0Ia" eventType="editingDidEnd" id="AO6-Wa-OfB"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rA-Jy-rio">
                                 <rect key="frame" x="156" y="729" width="103" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save Photo"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="XPr-L4-0Ia" eventType="touchUpInside" id="WBu-MX-QD0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-5I-CEs">
                                 <rect key="frame" x="274" y="725" width="120" height="133"/>
@@ -91,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Picture" id="Vdh-6n-vAx"/>
                     <connections>
+                        <outlet property="captionText" destination="L0E-My-a9Q" id="9Gc-Dh-reK"/>
                         <outlet property="displayImage" destination="VXr-yy-DHD" id="JlS-ir-9QS"/>
                     </connections>
                 </viewController>
